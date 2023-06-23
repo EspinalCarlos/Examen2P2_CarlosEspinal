@@ -19,7 +19,7 @@ public class Computadora {
     public Computadora() {
     }
 
-    public Computadora(int NumSerie, Date Year, Color col, String Material, RAM ram, Bateria bateria, DiscoDuro discoduro, Procesador procesador, Teclado teclado, Pantalla pantalla) {
+    public Computadora(int NumSerie, Date Year, Color col, String Material, RAM ram,DiscoDuro discoduro, Bateria bateria,Teclado teclado,Pantalla pantalla, Procesador procesador) {
         this.NumSerie = NumSerie;
         this.Year = Year;
         this.col = col;
