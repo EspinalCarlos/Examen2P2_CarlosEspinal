@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,6 +18,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -123,10 +126,6 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel12 = new javax.swing.JPanel();
         pclistaelim = new javax.swing.JComboBox<>();
         jButton17 = new javax.swing.JButton();
-        EliminarTecnico = new javax.swing.JDialog();
-        jPanel4 = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton9 = new javax.swing.JButton();
         simulacion = new javax.swing.JDialog();
         jPanel13 = new javax.swing.JPanel();
         tecnicosim = new javax.swing.JComboBox<>();
@@ -134,6 +133,10 @@ public class MainFrame extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
         jButton19 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
+        EliminarTecnico = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jButton9 = new javax.swing.JButton();
         ModificarTecnico = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         TNombre1 = new javax.swing.JTextField();
@@ -764,47 +767,6 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
-
-        jButton9.setText("Eliminar");
-        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton9MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                .addContainerGap(155, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
-        );
-
-        javax.swing.GroupLayout EliminarTecnicoLayout = new javax.swing.GroupLayout(EliminarTecnico.getContentPane());
-        EliminarTecnico.getContentPane().setLayout(EliminarTecnicoLayout);
-        EliminarTecnicoLayout.setHorizontalGroup(
-            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        EliminarTecnicoLayout.setVerticalGroup(
-            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         jPanel13.setBackground(new java.awt.Color(102, 102, 102));
 
         jButton19.setText("Iniciar sim");
@@ -868,6 +830,47 @@ public class MainFrame extends javax.swing.JFrame {
         simulacionLayout.setVerticalGroup(
             simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+
+        jButton9.setText("Eliminar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
+        );
+
+        javax.swing.GroupLayout EliminarTecnicoLayout = new javax.swing.GroupLayout(EliminarTecnico.getContentPane());
+        EliminarTecnico.getContentPane().setLayout(EliminarTecnicoLayout);
+        EliminarTecnicoLayout.setHorizontalGroup(
+            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EliminarTecnicoLayout.setVerticalGroup(
+            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
@@ -1095,7 +1098,18 @@ public class MainFrame extends javax.swing.JFrame {
             fw = new FileWriter(file,true);
             bw = new BufferedWriter(fw);
             bw.write(t.toString());
+            bw.flush();
         } catch (Exception e) {
+        }
+        try {
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
         techs.add(t);
         JOptionPane.showMessageDialog(CreateTecnico, "Tecnico creado");
@@ -1343,6 +1357,27 @@ public class MainFrame extends javax.swing.JFrame {
             int ran = r.nextInt(11);
             if (ran <= 3) {
                 JOptionPane.showMessageDialog(simulacion, "No se pudo hacer");
+                FileWriter fw = null;
+                BufferedWriter bw = null;
+
+                try {
+                    fw = new FileWriter(file2, true);
+                    bw = new BufferedWriter(fw);
+                    bw.write("La computadora "+pse.toString() + "no pudo ser ensamblada por: "+t);
+                    bw.flush();
+                } catch (Exception e) {
+                }
+                try {
+                    fw.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    bw.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
             } else{
                 ThreadSim ts = new ThreadSim(jProgressBar1, seconds);
                 ts.setAsig(t);
@@ -1462,6 +1497,7 @@ public class MainFrame extends javax.swing.JFrame {
     ArrayList<Parte> parts = new ArrayList();
     ArrayList<Computadora> pcs = new ArrayList();
     File file = new File("./apa.txt");
+    File file2 = new File("./bitacora.txt");
     
     
     
