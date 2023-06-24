@@ -2,8 +2,9 @@
 package examen2p2_carlos_espinal;
 
 import java.awt.Color;
+import java.io.Serializable;
 
-public class Teclado extends Parte{
+public class Teclado extends Parte implements Serializable{
     private String material;
     private Color col;
 

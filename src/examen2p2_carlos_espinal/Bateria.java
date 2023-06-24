@@ -1,8 +1,10 @@
 
 package examen2p2_carlos_espinal;
 
+import java.io.Serializable;
 
-public class Bateria extends Parte{
+
+public class Bateria extends Parte implements Serializable{
     private int CHoras;
     private String Material;
 

@@ -1,11 +1,13 @@
 
 package examen2p2_carlos_espinal;
 
+import java.io.Serializable;
+
 /**
  *
  * @author cespi
  */
-public class DiscoDuro extends Parte{
+public class DiscoDuro extends Parte implements Serializable{
     private int Size;
     private String Marca;
 

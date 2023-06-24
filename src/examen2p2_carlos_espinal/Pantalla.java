@@ -1,7 +1,9 @@
 
 package examen2p2_carlos_espinal;
 
-public class Pantalla extends Parte{
+import java.io.Serializable;
+
+public class Pantalla extends Parte implements Serializable{
     private boolean Tactil;
 
     public Pantalla() {

@@ -2,9 +2,10 @@
 package examen2p2_carlos_espinal;
 
 import java.awt.Color;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Computadora {
+public class Computadora implements Serializable{
     private int NumSerie;
     private Date Year = new Date();
     private Color col;

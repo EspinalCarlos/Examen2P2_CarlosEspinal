@@ -1,8 +1,10 @@
 
 package examen2p2_carlos_espinal;
 
+import java.io.Serializable;
 
-public class Tecnico {
+
+public class Tecnico implements Serializable{
     private String Nombre;
     private int Edad;
     private String Genero;
@@ -11,7 +13,7 @@ public class Tecnico {
     public Tecnico() {
     }
 
-    public Tecnico(String Nombre, int Edad, String Genero) {
+    public Tecnico(String Nombre, int Edad, String Genero)  {
         this.Nombre = Nombre;
         this.Edad = Edad;
         this.Genero = Genero;

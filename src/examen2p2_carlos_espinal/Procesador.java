@@ -1,8 +1,10 @@
 
 package examen2p2_carlos_espinal;
 
+import java.io.Serializable;
 
-public class Procesador extends Parte{
+
+public class Procesador extends Parte implements Serializable{
     private int NumNucleos;
     private String Velocidad;
 

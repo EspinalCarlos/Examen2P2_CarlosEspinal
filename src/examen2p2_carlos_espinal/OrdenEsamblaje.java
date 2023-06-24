@@ -1,8 +1,10 @@
 
 package examen2p2_carlos_espinal;
 
+import java.io.Serializable;
 
-public class OrdenEsamblaje {
+
+public class OrdenEsamblaje implements Serializable{
     private Tecnico tecnico;
     private Computadora pc;
 

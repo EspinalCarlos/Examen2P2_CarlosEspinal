@@ -1,11 +1,13 @@
 
 package examen2p2_carlos_espinal;
 
+import java.io.Serializable;
+
 /**
  *
  * @author cespi
  */
-public class RAM extends Parte{
+public class RAM extends Parte implements Serializable{
 
     private String Size;
     private String Marca;

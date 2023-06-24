@@ -5,6 +5,12 @@
 package examen2p2_carlos_espinal;
 
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
@@ -23,6 +29,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        
     }
 
     /**
@@ -112,14 +119,14 @@ public class MainFrame extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         procspinner = new javax.swing.JSpinner();
         jLabel19 = new javax.swing.JLabel();
-        EliminarTecnico = new javax.swing.JDialog();
-        jPanel4 = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton9 = new javax.swing.JButton();
         EliminarPC = new javax.swing.JDialog();
         jPanel12 = new javax.swing.JPanel();
         pclistaelim = new javax.swing.JComboBox<>();
         jButton17 = new javax.swing.JButton();
+        EliminarTecnico = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jButton9 = new javax.swing.JButton();
         simulacion = new javax.swing.JDialog();
         jPanel13 = new javax.swing.JPanel();
         tecnicosim = new javax.swing.JComboBox<>();
@@ -718,6 +725,45 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(jTabbedPane1)
         );
 
+        jPanel12.setBackground(new java.awt.Color(102, 102, 102));
+
+        jButton17.setText("Eliminar");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(pclistaelim, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(pclistaelim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout EliminarPCLayout = new javax.swing.GroupLayout(EliminarPC.getContentPane());
+        EliminarPC.getContentPane().setLayout(EliminarPCLayout);
+        EliminarPCLayout.setHorizontalGroup(
+            EliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EliminarPCLayout.setVerticalGroup(
+            EliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
 
         jButton9.setText("Eliminar");
@@ -757,45 +803,6 @@ public class MainFrame extends javax.swing.JFrame {
         EliminarTecnicoLayout.setVerticalGroup(
             EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel12.setBackground(new java.awt.Color(102, 102, 102));
-
-        jButton17.setText("Eliminar");
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(pclistaelim, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(pclistaelim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
-                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout EliminarPCLayout = new javax.swing.GroupLayout(EliminarPC.getContentPane());
-        EliminarPC.getContentPane().setLayout(EliminarPCLayout);
-        EliminarPCLayout.setHorizontalGroup(
-            EliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        EliminarPCLayout.setVerticalGroup(
-            EliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel13.setBackground(new java.awt.Color(102, 102, 102));
@@ -1080,7 +1087,17 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        techs.add(new Tecnico(TNombre.getText(), Integer.parseInt(TEdad.getText()), TGenero.getText()));
+        Tecnico t = new Tecnico(TNombre.getText(), Integer.parseInt(TEdad.getText()), TGenero.getText());
+        FileWriter fw=null;
+        BufferedWriter bw=null;
+        
+        try {
+            fw = new FileWriter(file,true);
+            bw = new BufferedWriter(fw);
+            bw.write(t.toString());
+        } catch (Exception e) {
+        }
+        techs.add(t);
         JOptionPane.showMessageDialog(CreateTecnico, "Tecnico creado");
         CreateTecnico.setVisible(false);
         
@@ -1202,6 +1219,7 @@ public class MainFrame extends javax.swing.JFrame {
         } else{
             parts.add(new Pantalla(false, (int)pantspinner.getValue()));
             PartesCreate.setVisible(false);
+            guardarBin(parts, "part.lmao");
         }
     }//GEN-LAST:event_jButton14MouseClicked
 
@@ -1215,18 +1233,21 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         parts.add(new RAM(RAMsize.getText(),RAMmarca.getText(),(int)Ramspin.getValue()));
         PartesCreate.setVisible(false);
+        guardarBin(parts, "part.lmao");
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
         // TODO add your handling code here:
         parts.add(new DiscoDuro(Integer.parseInt(ddsize.getText()), ddmarca.getText(), (int)DDspin.getValue()));
         PartesCreate.setVisible(false);
+        guardarBin(parts, "part.lmao");
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         // TODO add your handling code here:
         parts.add(new Bateria((int)batteryhours.getValue(), batterymaterial.getText(), (int)bateriaspinner.getValue()));
         PartesCreate.setVisible(false);
+        guardarBin(parts, "part.lmao");
         
     }//GEN-LAST:event_jButton13MouseClicked
 
@@ -1234,12 +1255,14 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         parts.add(new Teclado(teclmat.getText(), teclColor.getBackground(), (int)teclspinner.getValue()));
         PartesCreate.setVisible(false);
+        guardarBin(parts, "part.lmao");
     }//GEN-LAST:event_jButton15MouseClicked
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
         // TODO add your handling code here:
         parts.add(new Procesador((int)nucleonumber.getValue(), velocity.getText(), (int)procspinner.getValue()));
         PartesCreate.setVisible(false);
+        guardarBin(parts, "part.lmao");
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
@@ -1248,6 +1271,7 @@ public class MainFrame extends javax.swing.JFrame {
         PartesCreate.setModal(true);
         PartesCreate.setLocationRelativeTo(this);
         PartesCreate.setVisible(true);
+        
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void SeriePCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeriePCActionPerformed
@@ -1308,6 +1332,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
         // TODO add your handling code here:
+        jProgressBar1.setValue(0);
         Tecnico t = (Tecnico)tecnicosim.getSelectedItem();
         Computadora pse = (Computadora)pcsim.getSelectedItem();
         int seconds = pse.getsegundostotales();
@@ -1366,6 +1391,22 @@ public class MainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton19MouseClicked
 
+    
+    
+    private void txt1(Tecnico str){
+        FileWriter fw;
+        BufferedWriter bw;
+        
+        try {
+            fw = new FileWriter(file,true);
+            bw = new BufferedWriter(fw);
+            bw.write(str.toString());
+        } catch (Exception e) {
+        }
+    }
+    
+    
+    
     private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
         // TODO add your handling code here:
         simulacion.setVisible(false);
@@ -1408,9 +1449,19 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     
+    public static void guardarBin(ArrayList<Parte> partes, String Narchivo){
+        try (ObjectOutputStream oS = new ObjectOutputStream(new FileOutputStream(Narchivo))){
+            oS.writeObject(partes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
     ArrayList<Tecnico> techs = new ArrayList();
     ArrayList<Parte> parts = new ArrayList();
     ArrayList<Computadora> pcs = new ArrayList();
+    File file = new File("./apa.txt");
     
     
     
