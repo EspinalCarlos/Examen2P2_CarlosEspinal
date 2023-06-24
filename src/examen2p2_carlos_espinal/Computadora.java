@@ -117,6 +117,10 @@ public class Computadora {
     public void setPantalla(Pantalla pantalla) {
         this.pantalla = pantalla;
     }
+    
+    public int getsegundostotales(){
+        return getRam().getTEnsamblaje() + getBateria().getTEnsamblaje() + getDiscoduro().getTEnsamblaje() + getPantalla().getTEnsamblaje() + getTeclado().getTEnsamblaje() + getProcesador().TEnsamblaje;
+    }
 
     @Override
     public String toString() {

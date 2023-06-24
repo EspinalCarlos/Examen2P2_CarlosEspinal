@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
+import java.util.Random;
 
 /**
  *
@@ -64,10 +65,6 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jButton18 = new javax.swing.JButton();
-        EliminarTecnico = new javax.swing.JDialog();
-        jPanel4 = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton9 = new javax.swing.JButton();
         PartesCreate = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
@@ -115,10 +112,21 @@ public class MainFrame extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         procspinner = new javax.swing.JSpinner();
         jLabel19 = new javax.swing.JLabel();
+        EliminarTecnico = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jButton9 = new javax.swing.JButton();
         EliminarPC = new javax.swing.JDialog();
         jPanel12 = new javax.swing.JPanel();
         pclistaelim = new javax.swing.JComboBox<>();
         jButton17 = new javax.swing.JButton();
+        simulacion = new javax.swing.JDialog();
+        jPanel13 = new javax.swing.JPanel();
+        tecnicosim = new javax.swing.JComboBox<>();
+        pcsim = new javax.swing.JComboBox<>();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
         ModificarTecnico = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         TNombre1 = new javax.swing.JTextField();
@@ -130,8 +138,6 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         mod = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jDialog1 = new javax.swing.JDialog();
-        jPanel13 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -352,47 +358,6 @@ public class MainFrame extends javax.swing.JFrame {
         CreatePCLayout.setVerticalGroup(
             CreatePCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
-
-        jButton9.setText("Eliminar");
-        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton9MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
-                .addContainerGap(155, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
-        );
-
-        javax.swing.GroupLayout EliminarTecnicoLayout = new javax.swing.GroupLayout(EliminarTecnico.getContentPane());
-        EliminarTecnico.getContentPane().setLayout(EliminarTecnicoLayout);
-        EliminarTecnicoLayout.setHorizontalGroup(
-            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        EliminarTecnicoLayout.setVerticalGroup(
-            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel6.setBackground(new java.awt.Color(102, 102, 102));
@@ -753,6 +718,47 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(jTabbedPane1)
         );
 
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+
+        jButton9.setText("Eliminar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
+        );
+
+        javax.swing.GroupLayout EliminarTecnicoLayout = new javax.swing.GroupLayout(EliminarTecnico.getContentPane());
+        EliminarTecnico.getContentPane().setLayout(EliminarTecnicoLayout);
+        EliminarTecnicoLayout.setHorizontalGroup(
+            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EliminarTecnicoLayout.setVerticalGroup(
+            EliminarTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         jPanel12.setBackground(new java.awt.Color(102, 102, 102));
 
         jButton17.setText("Eliminar");
@@ -790,6 +796,71 @@ public class MainFrame extends javax.swing.JFrame {
         EliminarPCLayout.setVerticalGroup(
             EliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel13.setBackground(new java.awt.Color(102, 102, 102));
+
+        jButton19.setText("Iniciar sim");
+        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton19MouseClicked(evt);
+            }
+        });
+
+        jButton20.setText("Close");
+        jButton20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton20MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(tecnicosim, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pcsim, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jButton20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton19)))
+                .addGap(31, 31, 31))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tecnicosim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pcsim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton19)
+                    .addComponent(jButton20))
+                .addGap(21, 21, 21))
+        );
+
+        javax.swing.GroupLayout simulacionLayout = new javax.swing.GroupLayout(simulacion.getContentPane());
+        simulacion.getContentPane().setLayout(simulacionLayout);
+        simulacionLayout.setHorizontalGroup(
+            simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        simulacionLayout.setVerticalGroup(
+            simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
@@ -872,30 +943,6 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel13.setBackground(new java.awt.Color(102, 102, 102));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 899, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -953,6 +1000,11 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jButton8.setText("Simulacion");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         jButton10.setText("Crear Parte");
         jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1114,17 +1166,17 @@ public class MainFrame extends javax.swing.JFrame {
         
         for (Parte part : parts) {
             if (part instanceof RAM) {
-                dcmram.addElement(parts);
+                dcmram.addElement(part);
             } else if(part instanceof DiscoDuro){
-                dcmDD.addElement(parts);
+                dcmDD.addElement(part);
             } else if(part instanceof Bateria){
-                dcmBat.addElement(parts);
+                dcmBat.addElement(part);
             } else if(part instanceof Teclado){
-                dcmtecl.addElement(parts);
+                dcmtecl.addElement(part);
             } else if(part instanceof Pantalla){
-                dcmpantalla.addElement(parts);
+                dcmpantalla.addElement(part);
             } else if(part instanceof Procesador){
-                dcmproc.addElement(parts);
+                dcmproc.addElement(part);
             }
         }
         
@@ -1134,6 +1186,10 @@ public class MainFrame extends javax.swing.JFrame {
         TecladoPC.setModel(dcmtecl);
         ProcesadorPC.setModel(dcmproc);
         
+        CreatePC.pack();
+        CreatePC.setModal(true);
+        CreatePC.setLocationRelativeTo(this);
+        CreatePC.setVisible(true);
         
         
     }//GEN-LAST:event_jButton2MouseClicked
@@ -1226,6 +1282,96 @@ public class MainFrame extends javax.swing.JFrame {
         pclistaelim.setModel(dcm);
     }//GEN-LAST:event_jButton7MouseClicked
 
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        DefaultComboBoxModel dcmtec = (DefaultComboBoxModel)tecnicosim.getModel();
+        DefaultComboBoxModel dcmpc = (DefaultComboBoxModel)pcsim.getModel();
+        
+        dcmtec.removeAllElements();
+        dcmpc.removeAllElements();
+        
+        for (Tecnico tech : techs) {
+            dcmtec.addElement(tech);
+        }
+        for (Computadora pc : pcs) {
+            dcmpc.addElement(pc);
+        }
+        
+        tecnicosim.setModel(dcmtec);
+        pcsim.setModel(dcmpc);
+        
+        simulacion.pack();
+        simulacion.setModal(true);
+        simulacion.setLocationRelativeTo(this);
+        simulacion.setVisible(true);
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+        // TODO add your handling code here:
+        Tecnico t = (Tecnico)tecnicosim.getSelectedItem();
+        Computadora pse = (Computadora)pcsim.getSelectedItem();
+        int seconds = pse.getsegundostotales();
+        
+        
+        if (t.getCantPCs() <= 5) {
+            Random r = new Random();
+            int ran = r.nextInt(11);
+            if (ran <= 3) {
+                JOptionPane.showMessageDialog(simulacion, "No se pudo hacer");
+            } else{
+                ThreadSim ts = new ThreadSim(jProgressBar1, seconds);
+                ts.setAsig(t);
+                ts.start();
+                
+                
+            }
+        } else if(t.getCantPCs() <= 15 && t.getCantPCs() >= 6){
+            Random r = new Random();
+            int ran = r.nextInt(11);
+            if (ran <= 2) {
+                JOptionPane.showMessageDialog(simulacion, "No se pudo hacer");
+            } else{
+                ThreadSim ts = new ThreadSim(jProgressBar1, seconds);
+                ts.setAsig(t);
+                ts.start();
+                
+            }
+            
+            
+        } else if(t.getCantPCs() <= 30 && t.getCantPCs() >= 16){
+            Random r = new Random();
+            int ran = r.nextInt(11);
+            if (ran <= 1) {
+                JOptionPane.showMessageDialog(simulacion, "No se pudo hacer");
+            } else{
+                ThreadSim ts = new ThreadSim(jProgressBar1, seconds);
+                ts.setAsig(t);
+                ts.start();
+                
+            }
+            
+        } else if(t.getCantPCs() > 30){
+            Random r = new Random();
+            int ran = r.nextInt(11);
+            if (ran <= 0) {
+                JOptionPane.showMessageDialog(simulacion, "No se pudo hacer");
+            } else{
+                ThreadSim ts = new ThreadSim(jProgressBar1, seconds);
+                ts.setAsig(t);
+                ts.start();
+                
+            }
+            
+        }
+        
+    }//GEN-LAST:event_jButton19MouseClicked
+
+    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
+        // TODO add your handling code here:
+        simulacion.setVisible(false);
+        
+    }//GEN-LAST:event_jButton20MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1309,7 +1455,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1319,7 +1467,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1366,6 +1513,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
@@ -1374,10 +1522,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JSpinner nucleonumber;
     private javax.swing.JSpinner pantspinner;
     private javax.swing.JComboBox<String> pclistaelim;
+    private javax.swing.JComboBox<String> pcsim;
     private javax.swing.JSpinner procspinner;
+    private javax.swing.JDialog simulacion;
     private javax.swing.JButton teclColor;
     private javax.swing.JTextField teclmat;
     private javax.swing.JSpinner teclspinner;
+    private javax.swing.JComboBox<String> tecnicosim;
     private javax.swing.JTextField velocity;
     // End of variables declaration//GEN-END:variables
 }
